@@ -1,0 +1,10 @@
+1. Установить node.js
+2. инициализировать проект npm init
+3. установить parcel npm install --save-dev parcel@next
+4. Сделать настройку package.json
+{
+	"start": "parcel serve ./src/index.html",
+	"build": "parcel bulid ./src/index.html"
+}
+5. Устанавливаем реакт npm install --save react react-dom
+6. 
