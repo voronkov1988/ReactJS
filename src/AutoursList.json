@@ -1,0 +1,43 @@
+{
+    "id": 1,
+    "title": "Алиса в стране чудес",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi aliquam officiis impedit quisquam recusandae nemo unde vero ratione, fugit sint.",
+    "pages": 100,
+    "languages": "ru",
+    "progress": "90%",
+    "imgLink": "https://avatars.mds.yandex.net/get-zen_doc/1917356/pub_5d57c88695aa9f00ae3204c1_5d8c6bd5df944400c523d2e2/scale_1200",
+    "autour": [
+        {
+            "id": 1,
+            "name": "Evgeniy",
+            "email": "evgen@mail.ru",
+            "age": "32",
+            "avatar": "https://beon.vip/uploads_quiz/result_6192.jpg"
+        },
+        {
+            "id": 2,
+            "name": "petya",
+            "email": "petya@mail.ru",
+            "age": "23",
+            "avatar": "https://wp-media.familytoday.com/2015/12/featuredImageId19891.jpg"
+        },
+        {
+            "id": 3,
+            "name": "pavel",
+            "email": "pavel@mail.ru",
+            "age": "54",
+            "avatar": "https://get.pxhere.com/photo/person-girl-woman-hair-photography-portrait-model-youth-fashion-blue-lady-hairstyle-smile-long-hair-face-dress-eye-head-skin-beauty-blond-photo-shoot-brown-hair-portrait-photography-108386.jpg"
+        },
+        {
+            "id": 4,
+            "name": "qwerty",
+            "email": "qwerty@mail.ru",
+            "age": "541",
+            "avatar": "https://www.nastol.com.ua/download.php?img=201702/1920x1080/nastol.com.ua-209099.jpg"
+        }
+    ],
+    "minPrice": 300,
+    "price": 600,
+    "cashReady": 287,
+    "cashPromise": 900
+}
