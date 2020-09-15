@@ -1,9 +1,15 @@
 import React from 'react'
 import AutourList from './AutoursList'
+import Modal  from './Modal'
+
 
 class Book extends React.Component{
+    getPopular(){
+        const {subscribers} = this.props.book;
+        return subscribers > 10 ? 'Очень популярна' : 'Набирает популярность'
+    }
     render(){
-        const {title, description, pages, languages, progress, imgLink, minPrice, price} = this.props.book
+        const {title, subscribers, description, pages, languages, progress, imgLink, minPrice, price} = this.props.book
         return (
             <div className='bookWrapp' style={styles.bookWrapp}>
                 <div className='oneBook' style={styles.oneBook}>
@@ -20,6 +26,8 @@ class Book extends React.Component{
                         <p>Рекомендуемая цена - {price}</p>
                     </div>
                     <AutourList {...this.props}/>
+                    <div className='subscribers'>Подписчиков {subscribers}({this.getPopular()})</div>
+                    <Modal />
                 </div>
             </div>
         )

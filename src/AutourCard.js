@@ -9,16 +9,15 @@ const styles = {
     },
     'image': {
         'maxWidth': '30%',
-
     }
 }
 
 class AutourCard extends React.Component{
     render(){
-        // console.log(this.props)
+
         const {name, email, age, avatar} = this.props;
         return(
-                <div className='oneAutour'>
+                <div style={styles.autourWrapp} className='oneAutour'>
                     <img style={styles.image} src={avatar} alt={name}/>
                     <div className='infoAutour'>
                         <h3>{name}</h3>
