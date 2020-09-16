@@ -39,5 +39,6 @@
     "minPrice": 300,
     "price": 600,
     "cashReady": 287,
-    "cashPromise": 900
+    "cashPromise": 900,
+    "subscribers": 12
 }
