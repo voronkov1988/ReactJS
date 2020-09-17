@@ -9,7 +9,6 @@ class Modal extends React.Component{
 
     toggle(){
         this.setState({isOpen : !this.state.isOpen});
-        console.log(1)
     }
 
     render(){
@@ -20,7 +19,7 @@ class Modal extends React.Component{
                 this.state.isOpen && ReactDom.createPortal(
                     <div style={styles.fullModal}>
                         <div>
-                            <h2 style={styles.text}>Для того чтобы получить скидку автограф, сделайте пожертвование</h2>
+                            <h2 style={styles.text}>Для того чтобы получить автограф, сделайте пожертвование</h2>
                             <form style={styles.modalForm}>
                                 <input type="text"></input>
                                 <input type="submit"></input>
@@ -52,7 +51,6 @@ const styles = {
         display: 'flex',
         color: 'white',
         marginTop: '3%',
-        // alignItems: 'center',
         justifyContent: 'center'
     },
     text:{
