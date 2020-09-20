@@ -4,13 +4,15 @@ import SimilarBook from './SimilarBook'
 class SimilarBooks extends React.PureComponent{
     constructor(props){
         super(props);
-        this.state = { showBooks: this.props.similars.slice(0,4) }
+        this.state = { showBooks: this.props.similars }
         this.removeSimilar = this.removeSimilar.bind(this)
     }
 
     removeSimilar(id){
-        console.log(id)
-        this.setState({showBooks: (this.props.similars.filter(item => item.id != id).slice(0,4))})
+        let array = this.state.showBooks
+        console.log(array)
+        array.length > 4 ? (this.setState({showBooks: (array.filter(item => item.id != id))})) :  null;
+        
     }
 
     render(){
@@ -19,7 +21,7 @@ class SimilarBooks extends React.PureComponent{
                 <h2 style={styles.title}>Похожие книги</h2>
                 <div style={styles.wrap}>
                 {
-                    this.state.showBooks.map(item => {
+                    this.state.showBooks.slice(0,4).map(item => {
                         return <SimilarBook key={item.id} book={item} removeSimilar={this.removeSimilar}/>
                     })
                 }

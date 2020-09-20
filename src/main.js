@@ -5,7 +5,7 @@ import AutoursList from './AutoursList.json'
 import UserContext from './UserContext'
 import SimilarBooks from './SimilarBooks.json'
 
-
+const API_KEY = 'key1XVt8IuC69FRVl'
 const userInfo = {
     email: 'test@mail.ru',
     firstName: 'Evgeniy',
