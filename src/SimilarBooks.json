@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "img": "https://im0-tub-ru.yandex.net/i?id=93e6304c4b0c3bd76d5b03849d3a56c2&n=13",
+        "title": "Война и мир",
+        "autour": "Пупкин"
+    },
+    {
+        "id": 2,
+        "img": "https://cdn.book24.ru/v2/ITD000000000580645/COVER/cover3d1__w674.jpg",
+        "title": "test1",
+        "autour": "Пупкин1"
+    },
+    {
+        "id": 3,
+        "img": "https://img.yakaboo.ua/media/catalog/product/cache/1/image/234c7c011ba026e66d29567e1be1d1f7/3/2/324575_71118336.jpg",
+        "title": "test2",
+        "autour": "Пупкин2"
+    },
+    {
+        "id": 4,
+        "img": "https://cv0.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/24313400-dzhillian-bratstvo-konnora.jpg",
+        "title": "test3",
+        "autour": "Пупкин3"
+    },
+    {
+        "id": 5,
+        "img": "https://cv0.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/24313400-dzhillian-bratstvo-konnora.jpg",
+        "title": "test4",
+        "autour": "Пупкин4"
+    },
+    {
+        "id": 6,
+        "img": "https://libcat.ru/uploads/posts/book/nikolya-barro-kafe-malenkih-chudes.jpg",
+        "title": "test5",
+        "autour": "Пупкин5"
+    },
+    {
+        "id": 7,
+        "img": "https://static.my-shop.ru/product/3/265/2642132.jpg",
+        "title": "test6",
+        "autour": "Пупкин6"
+    },
+    {
+        "id": 8,
+        "img": "https://static.my-shop.ru/product/3/321/3208154.jpg",
+        "title": "test7",
+        "autour": "Пупкин7"
+    }
+]

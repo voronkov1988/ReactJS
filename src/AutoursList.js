@@ -2,10 +2,6 @@ import React from 'react'
 import AutourCard from './AutourCard'
 
 const styles = {
-    'wrap': {
-        // 'display': 'flex',
-        // 'justifyContent': 'space-around'
-    },
     'more': {
         'margin': '10px 10px',
         'marginLeft': '35%'

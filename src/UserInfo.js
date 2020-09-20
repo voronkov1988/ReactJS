@@ -1,11 +1,11 @@
 import React from 'react'
-import userContext from './userContext'
+import UserContext from './UserContext'
 
 
 class UserInfo extends React.Component{
     render(){
       return(
-          <userContext.Consumer>
+          <UserContext.Consumer>
               {
                   ({email, avatarUrl, firstName, lastName}) => {
                     return (
@@ -17,7 +17,7 @@ class UserInfo extends React.Component{
                     )
                   }
               }
-          </userContext.Consumer>
+          </UserContext.Consumer>
       )
     }
 }

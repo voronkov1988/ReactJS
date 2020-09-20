@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import ReactDOM from 'react-dom'
 import App from './App'
 import AutoursList from './AutoursList.json'
-import userContext from './userContext'
-console.log(userContext)
+import UserContext from './UserContext'
+import SimilarBooks from './SimilarBooks.json'
+
 
 const userInfo = {
     email: 'test@mail.ru',
@@ -13,9 +14,9 @@ const userInfo = {
 }
 
 ReactDOM.render(
-    <userContext.Provider value={userInfo}>
-        <App book={AutoursList}/>
-    </userContext.Provider>,
+    <UserContext.Provider value={userInfo}>
+        <App similar={SimilarBooks} book={AutoursList}/>
+    </UserContext.Provider>,
     document.getElementById('root')
  
     

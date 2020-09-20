@@ -1,19 +1,18 @@
 import React from 'react';
 import UserInfo from './UserInfo'
 
-class Header extends React.Component{
-    render(){
-        return (
-            <>
-            <div style={styles.header} className="header">
-                <img style={styles.img} src="https://static.tumblr.com/986212364a0a3c98918ef50c506cf2c3/alfxvss/wbQohwp5b/tumblr_static_30857eon4bwgwkkooowogw8sc.jpg"/>
-                <p style={styles.headerTitle} className="header-title">Book shop</p>
-                <UserInfo/>
-            </div>
-            </>
-        )
-    }
+const Header = ()=>{
+    return (
+        <>
+        <div style={styles.header} className="header">
+            <img style={styles.img} src="https://static.tumblr.com/986212364a0a3c98918ef50c506cf2c3/alfxvss/wbQohwp5b/tumblr_static_30857eon4bwgwkkooowogw8sc.jpg"/>
+            <p style={styles.headerTitle} className="header-title">Book shop</p>
+            <UserInfo/>
+        </div>
+        </>
+    )
 }
+
 
 const styles = {
     'header':{
