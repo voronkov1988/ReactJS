@@ -1,0 +1,35 @@
+1. componentDidMount ({window.addEventListener('resize', this.function)})   - вызывается сразу после вызова render() когда все элементы находятся в дереве. Используется для обработчиков событий.
+Если элемент с обработчиком удален со страницы нужно удалить все обработчики с помощью 
+componentWillUnmount({window.removeEventListener('resize', this.function)}).
+
+
+2. Функция для прерывания запросов
+ function debounce(fn, ms) {
+	let timer;
+	return _ => {
+		clearTimeout(timer);
+		timer = setTimeout(_ => {
+			timer = null;
+			fn.apply(this, arguments);
+		}, ms)
+	}
+}
+
+this.function = debounce(this.function.bind(this), 1000)
+
+3. Использование сторонних библиотек
+Библиотека для графиков c3. npm install --save c3
+а. Снчала нужно создать ссылку с ref. 
+б. import c3 from 'c3'
+В компоненте componentDidMount(){
+	c3.generate({
+		bindto: this.ref.current,
+		data: {
+			column: [
+				['data1',10,20,30,40],
+				['data2',10,30,20,40]
+			]
+		}
+	})
+}
+Создать блок div в render() и поместить в него созданную ссылку <div ref={this.ref}></div>

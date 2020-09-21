@@ -9,10 +9,7 @@ class SimilarBooks extends React.PureComponent{
     }
 
     removeSimilar(id){
-        let array = this.state.showBooks
-        console.log(array)
-        array.length > 4 ? (this.setState({showBooks: (array.filter(item => item.id != id))})) :  null;
-        
+        this.setState({showBooks: (this.props.similars.filter(item => item.id != id))})
     }
 
     render(){

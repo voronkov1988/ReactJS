@@ -3,7 +3,6 @@ import React from 'react'
 const SimilarBook = React.memo(
   (book, removeSimilar) => {
     return (
-      <>
         <div style={styles.oneBook} className='oneBook'>
           <div style={styles.topBlock}>
             <img style={styles.img} src={book.book.img}/>
@@ -12,8 +11,6 @@ const SimilarBook = React.memo(
           <div>{book.book.title}</div>
           <div>{book.book.autour}</div>
         </div>
-        
-    </>
     )
   }
 )
