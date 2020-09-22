@@ -33,3 +33,28 @@ this.function = debounce(this.function.bind(this), 1000)
 	})
 }
 Создать блок div в render() и поместить в него созданную ссылку <div ref={this.ref}></div>
+
+
+4. Чтобы получать данные по апи нужен http клиент axios (npm install --save axios)
+Потом import axios from 'axios'
+Настройка: 
+const httpClient = axios.create({
+	baseUrl: 'https://api.airtable.com/v0/apphNtHVqcSyA4Oi5',
+	timeout: 1000,
+	headers: {
+		Authorization: `Bearer YOUR_API_KEY`
+	}
+})
+запуск httpClient.get('/products', {
+	params: {
+		maxRecords:3,
+		view: 'Grid view',
+		filterByFormula: searchquery ?  `SEARCH("${searchquery}", LOWER({Title})` : undefined
+	}
+	
+}
+
+
+5. static getDerivedStateFromProps(nextProps, prevState){}  Обновляет состояние при новых пропсах. Должен возвращать или новое состояние или null
+
+6. Компонент componentDidUpdate()  Обновляет данные при перерисовке компонента

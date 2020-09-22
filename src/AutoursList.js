@@ -30,6 +30,7 @@ class AutourList extends React.Component{
     }
 
     render(){
+        // console.log(this.props)
         const {showLimit, showAllAutours, allAutours} = this.state;
         return(
             <>
