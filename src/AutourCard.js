@@ -14,7 +14,7 @@ const styles = {
 
 class AutourCard extends React.Component{
     render(){
-        const {name, email, age, avatar} = this.props;
+        const {name, email, age, avatar} = this.props.fields;
         return(
             <div style={styles.autourWrapp} className='oneAutour'>
                 <img style={styles.image} src={avatar} alt={name}/>

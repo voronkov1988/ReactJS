@@ -4,12 +4,21 @@ import ReactDom from 'react-dom'
 class Modal extends React.Component{
     constructor(props){
         super(props);
-        this.state = { isOpen : false }
+        
+        this.state = {
+            isOpen : false,
+        },
+        this.refLink = React.createRef()
+    }
+
+    componentDidMount(){
+        console.log(this.refLink.current)
     }
 
     toggle(){
         this.setState({isOpen : !this.state.isOpen});
     }
+    
 
     render(){
         return(
@@ -21,7 +30,7 @@ class Modal extends React.Component{
                         <div>
                             <h2 style={styles.text}>Для того чтобы получить автограф, сделайте пожертвование</h2>
                             <form style={styles.modalForm}>
-                                <input type="text"></input>
+                                <input ref={this.refLink} type="text"></input>
                                 <input type="submit"></input>
                             </form>,
                         </div>
