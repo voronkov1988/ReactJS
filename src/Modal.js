@@ -12,7 +12,7 @@ class Modal extends React.Component{
     }
 
     componentDidMount(){
-        console.log(this.refLink.current)
+        // console.log(this.refLink.current)
     }
 
     toggle(){
