@@ -1,7 +1,7 @@
 import React from 'react'
-import AutourList from './AutoursList'
 import Modal  from './Modal'
 import FetchAutourList from './FetchAutourList'
+import Loader from './HOC/HOCWithLoader'
 
 
 class Book extends React.Component{
@@ -10,10 +10,8 @@ class Book extends React.Component{
         return subscribers > 10 ? 'Очень популярна' : 'Набирает популярность'
     }
     render(){
-        // console.log(this.props.book)
         const {title, subscribers, description, pages, languages, progress, imgLink, minPrice, price} = this.props.book
         return (
-            // <div className='bookWrapp' style={styles.bookWrapp}>
                 <div className='oneBook' style={styles.oneBook}>
                     <img style={styles.image} className='image' src={imgLink} alt={title}/>
                     <h2 style={styles.text} className='text'>{title}</h2>
@@ -28,11 +26,9 @@ class Book extends React.Component{
                         <p>Рекомендуемая цена - {price}</p>
                     </div>
                     <FetchAutourList {...this.props.book} />
-                    {/* <AutourList {...this.props}/> */}
                     <div className='subscribers'>Подписчиков {subscribers}({this.getPopular()})</div>
                     <Modal />
                 </div>
-            // </div>
         )
     }
 }

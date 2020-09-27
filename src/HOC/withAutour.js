@@ -1,15 +1,18 @@
 import React from 'react'
+import Loader from './HOCWithLoader'
+
 const API_KEY = 'key1XVt8IuC69FRVl'
 const useBooks = (Component,table,item) => class useBooks extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-           autours: null,
+           fetchItems: null,
+           isLoading: true
         }
     }
 
     componentDidMount(){
-       return this.fetchAutours('all');
+       return this.fetchAutours();
     }
 
     fetchAutours(){
@@ -19,7 +22,7 @@ const useBooks = (Component,table,item) => class useBooks extends React.Componen
             }
         })
         .then(res => res.json())
-        .then(result => this.setState({autours: result.records}))
+        .then(result => this.setState({autours: result.records, isLoading: false}))
     }
 
     componentDidUpdate(){

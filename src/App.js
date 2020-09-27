@@ -18,9 +18,6 @@ class App extends React.Component{
             <FetchBooks>
                 <FetchAutourList/>
             </FetchBooks>
-            {/* <Book {...this.props}>
-                <AutourList autours={this.props.book.autour}/>
-            </Book> */}
             <SimilarBooks similars={Similar} />
             <BottomForm/>
             <Footer/>
