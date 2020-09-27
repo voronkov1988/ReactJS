@@ -12,11 +12,27 @@ class AutourList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            autour: null,
             showLimit: 3,
             showAllAutours: false,
             allAutours: this.props.book.autour.length
         }
     }
+
+    componentDidMount(){
+        this.fetchAutours();
+    }
+
+    fetchAutours(){
+        fetch('https://api.airtable.com/v0/apphNtHVqcSyA4Oi5/autour?maxRecords=3&view=All%20clients', {
+            headers: {
+                Authorization: `Bearer ${API_KEY}`
+            }
+        })
+        .then(res => res.json())
+        .then(result => this.setState({autours: result.records}))
+    }
+
     toogleState(){
         this.setState({showAllAutours : !this.state.showAllAutours})
     }

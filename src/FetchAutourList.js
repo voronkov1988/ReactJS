@@ -1,35 +1,47 @@
 import React from 'react'
-
-const API_KEY = 'key1XVt8IuC69FRVl'
+import AutourCard from './AutourCard'
+import useBooks from './HOC/withAutour'
 
 class FetchAutourList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            autours: null
+            autours: null,
+           showAllAutours: false
         }
     }
-
-    componentDidMount(){
-        this.fetchAutours();
+    showLimit(){
+        const {autours, showAllAutours} = this.state;
+        return showAllAutours ? this.state.length : 3
     }
 
-    fetchAutours(){
-        fetch('https://api.airtable.com/v0/apphNtHVqcSyA4Oi5/autour?maxRecords=3&view=All%20clients', {
-            headers: {
-                Authorization: `Bearer ${API_KEY}`
-            }
-        })
-        .then(res => res.json())
-        .then(result => this.setState({autours: result.records}))
+    showToogle(){
+        this.setState({showAllAutours: !this.state.showAllAutours})
     }
 
     render(){
-        console.log(this.state.autours)
+        const autourList = Object.values(this.props).slice(0,this.showLimit())
         return(
-                <div>123</div>
-            
+            <div>
+            <div style={styles.wrap} className='autourWrapp'>
+                {
+                   autourList.map(item => {
+                    //    console.log(item.fields)
+                        return (<AutourCard key={item.fields.id} {...item.fields}/>)
+                    })
+                }
+            </div>
+            <button onClick={()=>this.showToogle()} style={styles.more}>Показать всех авторов</button>
+            </div>
         )
     }
 }
-export default FetchAutourList
+
+const styles = {
+    'more': {
+        'margin': '10px 10px',
+        'marginLeft': '35%'
+    }
+}
+
+export default useBooks(FetchAutourList, 'autour', 'clients')
