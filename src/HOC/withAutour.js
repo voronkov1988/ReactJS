@@ -12,6 +12,7 @@ const useBooks = (Component,table,item) => class useBooks extends React.Componen
     }
 
     componentDidMount(){
+
        return this.fetchAutours();
     }
 
@@ -28,6 +29,7 @@ const useBooks = (Component,table,item) => class useBooks extends React.Componen
     componentDidUpdate(){
         if(!this.state.autours){
             this.fetchAutours(this.props.count)
+            this.setState({isLoading: !isLoading})
         }
     }
 
@@ -36,9 +38,8 @@ const useBooks = (Component,table,item) => class useBooks extends React.Componen
         return(
             <>
             {
-                this.state.autours
-                ? <Component {...this.state.autours}/> 
-                : <div>loading</div>
+                <Component {...this.state.autours}/> 
+                
             }
             
             </>

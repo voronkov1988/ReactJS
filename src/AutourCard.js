@@ -1,10 +1,9 @@
 import React from 'react'
 
 class AutourCard extends React.Component{
-    
     render(){
+        console.log(this.props)
         const {name, email, age, avatar} = this.props;
-        // console.log(this.props)
         return(
             <div style={styles.autourWrapp} className='oneAutour'>
                 <img style={styles.image} src={avatar} alt={name}/>

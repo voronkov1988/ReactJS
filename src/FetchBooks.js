@@ -1,7 +1,7 @@
 import React from 'react'
-import axios from 'axios'
 import Book from './Book'
 import useBooks from './HOC/withAutour'
+import withLoader from './HOC/HOCWithLoader'
 
 
 
@@ -17,7 +17,10 @@ class FetchBooks extends React.Component{
         return (
             <div className='wrapp' style={styles.wrapp}>
                 {
-                    <>{Object.values(this.props).map(item=> <Book key={item.fields.id} book={item.fields}/>)}</>
+                    <>{Object.values(this.props).map(item=>
+                         <Book isLoading={false} key={item.fields.id} book={item.fields}/>
+                        )}
+                    </>
                 }
             </div>
         )
@@ -30,4 +33,4 @@ const styles = {
     }
 }
 
-export default useBooks(FetchBooks, 'Books', 'projects')
+export default useBooks(withLoader(FetchBooks), 'Books', 'projects')

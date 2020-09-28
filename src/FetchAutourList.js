@@ -1,6 +1,7 @@
 import React from 'react'
 import AutourCard from './AutourCard'
 import useBooks from './HOC/withAutour'
+import withLoader from './HOC/HOCWithLoader'
 
 class FetchAutourList extends React.Component{
     constructor(props){
@@ -27,8 +28,9 @@ class FetchAutourList extends React.Component{
             <div style={styles.wrap} className='autourWrapp'>
                 {
                    autourList.map(item => {
-                    //    console.log(item.fields)
-                        return (<AutourCard key={item.fields.id} {...item.fields}/>)
+                        return (
+                            <AutourCard isLoading={this.state.isLoading} key={item.fields.id} {...item.fields}/>
+                        )
                     })
                 }
             </div>
@@ -45,4 +47,4 @@ const styles = {
     }
 }
 
-export default useBooks(FetchAutourList, 'autour', 'clients')
+export default useBooks(withLoader(FetchAutourList), 'autour', 'clients')
