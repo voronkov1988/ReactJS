@@ -2,11 +2,11 @@ import React from 'react';
 
 const withLoader = EnhancedComponent => (
   function withLoader(props) {
-    console.log(props)
+    console.log('isLoading', props.isLoading)
     return (
-      !props.isLoading
-        ? <EnhancedComponent {...props} />
-        : <div>Идет загрузка...</div>
+      props.isLoading
+        ? <div>Идет загрузка...</div>
+        : <EnhancedComponent {...props} />
         
     );
   }

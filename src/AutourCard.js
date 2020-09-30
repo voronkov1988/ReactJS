@@ -1,4 +1,5 @@
 import React from 'react'
+import withLoader from './HOC/HOCWithLoader'
 
 class AutourCard extends React.Component{
     render(){
@@ -16,7 +17,7 @@ class AutourCard extends React.Component{
         )
     }
 }
-export default AutourCard
+export default withLoader(AutourCard)
 
 
 const styles = {
