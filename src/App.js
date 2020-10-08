@@ -15,7 +15,7 @@ class App extends React.Component{
             <FetchBooks>
                 <FetchAutourList/>
             </FetchBooks>
-            {/* <SimilarBooks {...this.props} /> */}
+            <SimilarBooks {...this.props} />
             <BottomForm/>
             <Footer/>
             </>

@@ -14,8 +14,7 @@ const userInfo = {
 
 ReactDOM.render(
     <UserContext.Provider value={userInfo}>
-        <App />
-        {/* <App  similar={SimilarBooks}/> */}
+        <App  similar={SimilarBooks}/>
     </UserContext.Provider>
     ,
     document.getElementById('root')
