@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import ReactDOM from 'react-dom'
 import App from './App'
 import UserContext from './UserContext'
-// import SimilarBooks from './SimilarBooks.json'
-// console.log(SimilarBooks)
+import SimilarBooks from './SimilarBooks.json'
+console.log(SimilarBooks)
 
 const userInfo = {
     email: 'test@mail.ru',
