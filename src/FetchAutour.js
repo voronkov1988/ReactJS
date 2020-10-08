@@ -1,7 +1,7 @@
 import React from 'react'
-import FetchBooks from './FetchBooks'
 
 class FetchAutour extends React.Component{
+    
     render(){
         const {name, email, avatar, age} = this.props.autour.fields
         console.log(this.props.autour.fields)

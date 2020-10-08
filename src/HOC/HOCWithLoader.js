@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-const HOCWithLoader = (Component) =>{
-    return (props) => {
-        props.isLoading ? <div>Loading</div> : <Component {...props}/>
-    }
-}
-
-export default HOCWithLoader
+const withLoader = EnhancedComponent => (
+  function withLoader(props) {
+    console.log('isLoading', props.isLoading)
+    return (
+      props.isLoading
+        ? <div>Идет загрузка...</div>
+        : <EnhancedComponent {...props} />
+        
+    );
+  }
+)
+export default withLoader;
