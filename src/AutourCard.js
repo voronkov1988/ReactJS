@@ -3,7 +3,7 @@ import withLoader from './HOC/HOCWithLoader'
 
 class AutourCard extends React.Component{
     render(){
-        console.log(this.props)
+ 
         const {name, email, age, avatar} = this.props;
         return(
             <div style={styles.autourWrapp} className='oneAutour'>

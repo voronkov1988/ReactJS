@@ -1,10 +1,7 @@
 import React from 'react'
-import AutourList from './AutoursList'
-// import Book from './Book'
 import Header from './Header'
 import Footer from './Footer'
 import BottomForm from './BottomForm'
-import Similar from './SimilarBooks.json'
 import SimilarBooks from './SimilarBooks'
 import FetchBooks from './FetchBooks'
 import FetchAutourList from './FetchAutourList'
@@ -18,7 +15,7 @@ class App extends React.Component{
             <FetchBooks>
                 <FetchAutourList/>
             </FetchBooks>
-            <SimilarBooks similars={Similar} />
+            {/* <SimilarBooks {...this.props} /> */}
             <BottomForm/>
             <Footer/>
             </>

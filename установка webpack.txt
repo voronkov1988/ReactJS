@@ -1,0 +1,16 @@
+1. Инициализировать проект npm init
+2. Установить webpack npm install --save-dev webpack webpack-cli
+3. Создать конфигурационный файл в корне webpack.config.js
+4. Установить html-webpack-plugin  (npm install --save-dev html-webpack-plugin)
+5. Установить react ( npm install --save react react-dom )
+6. Установить babel и preseti ( npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react )
+7. Установить webpack dev server (npm install --save-dev webpack-dev-server) и в Webpack.config.js добавить 
+const path = require('path')
+devServer: {
+	contentBase: path.join(__dirname, 'dist'),
+	compress: true,
+	port: 9000
+},
+8. Установить плагины для стилей npm install --save-dev css-loader style-loader
+9. установить npm install --save-dev mini-css-extract-plugin
+
