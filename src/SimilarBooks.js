@@ -1,15 +1,16 @@
 import React from 'react'
 import SimilarBook from './SimilarBook'
 
+
 class SimilarBooks extends React.PureComponent{
     constructor(props){
         super(props);
-        this.state = { showBooks: this.props.similars }
+        this.state = { showBooks: this.props.similar }
         this.removeSimilar = this.removeSimilar.bind(this)
     }
 
     removeSimilar(id){
-        this.setState({showBooks: (this.props.similars.filter(item => item.id != id))})
+        this.setState({showBooks: (this.props.similar.filter(item => item.id != id))})
     }
 
     render(){
