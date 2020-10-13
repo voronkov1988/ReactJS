@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal  from './Modal'
 import FetchAutourList from './FetchAutourList'
-import Loader from './HOC/HOCWithLoader'
+import styled from 'styled-components';
 
 
 class Book extends React.Component{
@@ -12,57 +12,51 @@ class Book extends React.Component{
     render(){
         const {title, subscribers, description, pages, languages, progress, imgLink, minPrice, price} = this.props.book
         return (
-                <div className='oneBook' style={styles.oneBook}>
-                    <img style={styles.image} className='image' src={imgLink} alt={title}/>
-                    <h2 style={styles.text} className='text'>{title}</h2>
+                <OneBook>
+                    <Image src={imgLink} alt={title}/>
+                    <BookTitle>{title}</BookTitle>
                     <p>{description}</p>
-                    <div style={styles.infoBook} className='infoBook'>
+                    <InfoBook>
                         <span>страниц - {pages}</span>
                         <span>язык - {languages}</span>
                         <span>прогресс - {progress}</span>
-                    </div>
-                    <div style={styles.cost} className="costBook">
+                    </InfoBook>
+                    <CostBook>
                         <p>Минимальная цена - {minPrice}</p>
                         <p>Рекомендуемая цена - {price}</p>
-                    </div>
+                    </CostBook>
                     <FetchAutourList {...this.props.book} />
-                    <div className='subscribers'>Подписчиков {subscribers}({this.getPopular()})</div>
+                    <div>Подписчиков {subscribers}({this.getPopular()})</div>
                     <Modal />
-                </div>
+                </OneBook>
         )
     }
 }
 export default Book
 
-const styles = {
-    'bookWrapp': {
-        display: 'flex',
-        'width': '100%',
-        'heigth': '400px',
-        'border': '1px solid black',
-    },
-    'oneBook': {
-        'maxWidth': '25%',
-        'heigth': '350px',
-        'border': '2px solid black',
-        'margin': '10px 10px',
-        'boxShadow': '3px 3px gray'
-    },
-    'image': {
-        'maxWidth': '100%'
-    },
-    'infoBook': {
-        'display': 'flex',
-        'justifyContent': 'space-around',
-        'fontSize': '1.1em'
-    },
-    'text': {
-        'textAlign': 'center',
-        'color': 'red'
-    },
-    'cost': {
-        'fontSize': '.9em',
-        'display': 'flex',
-        'justifyContent': 'space-around'
+const OneBook = styled.div`
+    max-width: 35%;
+    border: 2px solid black;
+    margin: 10px 10px;
+    box-shadow: 3px 3px gray;
+    @media(max-width: 800px){
+        max-width:100%;
     }
-}
+`;
+const Image = styled.img`
+    max-width:100%;
+`;
+const InfoBook = styled.div`
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1em;
+`;
+const CostBook = styled.div`
+    font-size: .9em;
+    display: flex;
+    justify-content: space-around;
+`;
+const BookTitle = styled.h2`
+    text-align: center;
+    color: red;
+`;

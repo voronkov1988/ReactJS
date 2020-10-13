@@ -1,0 +1,24 @@
+1. Установка PostCSS, prefixer  (npm install --save-dev postcss postcss-loader autoprefixer postcss-nested-plugin
+
+module.exports = {
+	module:{
+		rules:[
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'postcss-loader'],
+			}
+			]
+		}
+	}
+
+module.exports ={
+	plugins: [
+		require('autoprefixer'),
+		require('postcss-nested')
+	]
+}
+
+2. Стили с плагином styled-component
+npm install css-loader mini-css-extract-plugin --save-dev
+npm install --save-dev postcss-loader autoprefixer postcss-custom-media
+Установка npm install --save styled-components

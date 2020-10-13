@@ -1,7 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 
 class BottomForm extends React.Component{
-
     getDataForm(e){
         e.preventDefault();
         console.log(e.target.message.value, e.target.email.value)
@@ -9,52 +9,55 @@ class BottomForm extends React.Component{
 
     render(){
         return(
-            <div style={styles.formWrapp} className='formWrapp'>
-                <div className='imgBlock'>
-                    <h3 style={styles.title}>Форма для связи с автором</h3>
-                    <img style={styles.imgForm} src='https://sortimo.ru/assets/images/contact.jpg' alt='Связаться с автором' />
-                </div>
+            <FromWrapp>
+                <ImgBlock>
+                    <FormTitle>Форма для связи с автором</FormTitle>
+                    <Image src='https://sortimo.ru/assets/images/contact.jpg' alt='Связаться с автором' />
+                </ImgBlock>
                 <div className='form'>
                     <form onSubmit={this.getDataForm}>
-                        <textarea style={styles.topInput} className='message' name='message' placeholder='Задайте свой вопрос автору'></textarea>
-                        <input style={styles.input} className='email' name='email' type='text' placeholder='введите email'></input>
-                        <input style={styles.input} type='submit'></input>
+                        <TextArea className='message' name='message' placeholder='Задайте свой вопрос автору'></TextArea>
+                        <Input className='email' name='email' type='text' placeholder='введите email'></Input>
+                        <Input type='submit'></Input>
                     </form>
                 </div>
-            </div>
+            </FromWrapp>
         )
     }
 }
 
-const styles = {
-    formWrapp: {
-        display: 'flex',
-        justifyContent: 'space-around',
-        padding: '20px 20px',
-        border: '1px solid black',
-    },
-    imgForm: {
-        maxHeight: '300px'
-    },
-    input: {
-        display: 'block',
-        marginTop: '10px',
-        width: '400px',
-        height: '50px',
-        fontSize: '2em',
-        textAlign: 'center',
-        borderRadius: '10px'
-    },
-    topInput: {
-        marginTop: '80px',
-        borderRadius: '10px',
-        width: '400px',
-        height: '150px'
-    },
-    title:{
-        fontSize: '1.4em',
-        textAlign: 'center'
-    }
-}
 
 export default BottomForm
+
+const FromWrapp = styled.div`
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 20px;
+    border: 1px solid black;
+`;
+const ImgBlock = styled.div`
+    max-height: 300px;
+`;
+const Image = styled.img`
+    max-height:300px;
+`;
+const Input = styled.input`
+    display: block;
+    margin-top: 10px;
+    width: 400px;
+    height: 50px;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 10px;
+`;
+const TextArea = styled.textarea`
+    margin-top: 80px;
+    border-radius: 10px;
+    width: 400px;
+    height: 150px;
+`;
+
+const FormTitle = styled.h3`
+    text-align:center;
+    font-size: 1.2em;
+`;
