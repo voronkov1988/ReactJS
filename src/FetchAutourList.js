@@ -2,6 +2,8 @@ import React from 'react'
 import AutourCard from './AutourCard'
 import withData from './HOC/withData'
 import withLoader from './HOC/HOCWithLoader'
+import styled  from 'styled-components'
+
 
 class FetchAutourList extends React.Component{
     constructor(props){
@@ -25,7 +27,7 @@ class FetchAutourList extends React.Component{
         const autourList = this.props.value.slice(0,this.showLimit())
         return(
             <div>
-            <div style={styles.wrap} className='autourWrapp'>
+            <AutourWrap>
                 {
                    autourList.map(item => {
                         return (
@@ -33,18 +35,20 @@ class FetchAutourList extends React.Component{
                         )
                     })
                 }
-            </div>
-            <button onClick={()=>this.showToogle()} style={styles.more}>Показать всех авторов</button>
+            </AutourWrap>
+            <Button onClick={()=>this.showToogle()}>Показать всех авторов</Button>
             </div>
         )
     }
 }
 
-const styles = {
-    'more': {
-        'margin': '10px 10px',
-        'marginLeft': '35%'
-    }
-}
+const AutourWrap = styled.div`
+    margin: 10px 10px;
+`;
+
+const Button = styled.button`
+    margin: 10px 10px;
+    margin-left: 35%;
+`;
 
 export default withData(withLoader(FetchAutourList), 'autour', 'clients')

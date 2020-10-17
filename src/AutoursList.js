@@ -1,12 +1,13 @@
 import React from 'react'
 import AutourCard from './AutourCard'
+import styled from 'styled-components'
+console.log(styled)
 
-const styles = {
-    'more': {
-        'margin': '10px 10px',
-        'marginLeft': '35%'
-    }
-}
+const AutourButton = styled.button`
+    margin: 10px 10px;
+    color: red;
+`;
+
 
 class AutourList extends React.Component{
     constructor(props){
@@ -46,7 +47,6 @@ class AutourList extends React.Component{
     }
 
     render(){
-        // console.log(this.props)
         const {showLimit, showAllAutours, allAutours} = this.state;
         return(
             <>
@@ -55,7 +55,7 @@ class AutourList extends React.Component{
                     return(<AutourCard key={item.id} {...item}/>)
                 })}
             </div>
-            <button onClick={() =>this.toogleState()}  style={styles.more}>{this.showButtonText()}</button>
+            <AutourButton onClick={() =>this.toogleState()}>{this.showButtonText()}</AutourButton>
             </>
         )
     }
