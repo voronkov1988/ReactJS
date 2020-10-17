@@ -1,24 +1,20 @@
 import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
-import BottomForm from './BottomForm'
-import SimilarBooks from './SimilarBooks'
-import FetchBooks from './FetchBooks'
-import FetchAutourList from './FetchAutourList'
+import Main from './pages/Main'
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import BookPage from './pages/book/BookPage'
 
 
 class App extends React.Component{
     render(){
+        // console.log(this.props)
         return ( 
-            <>
-            <Header/>
-            <FetchBooks>
-                <FetchAutourList/>
-            </FetchBooks>
-            <SimilarBooks {...this.props} />
-            <BottomForm/>
-            <Footer/>
-            </>
+            <Router>
+                {/* <Main/> */}
+                <Switch>
+                    <Route component={Main} path='/' exact />
+                    <Route component={BookPage} path='/product/:bookId' exact/>
+                </Switch>
+            </Router>
         )
     }
 }

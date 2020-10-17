@@ -12,7 +12,6 @@ const withData = (Component,table,item) => class useBooks extends React.Componen
     }
 
     componentDidMount(){
-
        return this.fetchData();
     }
 
@@ -23,9 +22,9 @@ const withData = (Component,table,item) => class useBooks extends React.Componen
             }
         })
         .then(res => res.json())
-        .then(result => setTimeout(() => {
+        .then(result => 
             this.setState({value: result.records, isLoading: false})
-        }, 2000 ))
+         )
     }
 
     componentDidUpdate(){
