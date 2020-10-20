@@ -8,6 +8,7 @@ import {useHistory} from 'react-router-dom'
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { uploadFile } from './FilestackServer'
+import Helmet from 'react-helmet'
 
 const Schema = yup.object().shape({
     title: yup.string().required(),
@@ -65,16 +66,19 @@ const AddBook = () => {
     }
     return(
         <>
+        <Helmet>
+            <title>Добавить книгу</title>
+        </Helmet>
         <Header/>
         <FormWrapp>
             <H2>Форма для добавления книги</H2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <Field defaultValue={'dfds'} errors={errors} style={style} name='title' placeholder='Название книги' register={register}></Field>
-                <Field defaultValue={'dfds'} errors={errors} style={style} name='description' type='textarea' placeholder='Описание книги' register={register}/>
-                <Field defaultValue={12} errors={errors} style={style} name='pages' placeholder='Количество страниц' register={register}/>
+                <Field errors={errors} style={style} name='title' placeholder='Название книги' register={register}></Field>
+                <Field errors={errors} style={style} name='description' type='textarea' placeholder='Описание книги' register={register}/>
+                <Field errors={errors} style={style} name='pages' placeholder='Количество страниц' register={register}/>
                 <Field type='file' style={style} name='imgLink' register={register}/>
-                <Field defaultValue={123} errors={errors} style={style} name='price' placeholder='Цена книги' register={register}/>
-                <Field defaultValue={'dfds'} style={style} name='addAutour' placeholder='Введите автора' register={register}/>
+                <Field errors={errors} style={style} name='price' placeholder='Цена книги' register={register}/>
+                <Field style={style} name='addAutour' placeholder='Введите автора' register={register}/>
                 <Input>Add book</Input>
             </form>
         </FormWrapp>
