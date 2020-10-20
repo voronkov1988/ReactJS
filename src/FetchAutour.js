@@ -4,7 +4,6 @@ class FetchAutour extends React.Component{
     
     render(){
         const {name, email, avatar, age} = this.props.autour.fields
-        console.log(this.props.autour.fields)
         return(
             <div>
                 <img src={avatar} alt={name}/>

@@ -1,7 +1,7 @@
 import React from 'react'
 import AutourCard from './AutourCard'
 import styled from 'styled-components'
-console.log(styled)
+
 
 const AutourButton = styled.button`
     margin: 10px 10px;
