@@ -3,6 +3,7 @@ import Book from './Book'
 import withData from './HOC/withData'
 import withLoader from './HOC/HOCWithLoader'
 import styled from 'styled-components'
+
 // import './styles/bookStyles.css'
 
 let BookWrap = styled.div`
@@ -26,7 +27,7 @@ class FetchBooks extends React.Component{
             <BookWrap>
                 {
                     <>{this.props.value.map(item=>
-                         <Book isLoading={!this.state.isLoading} key={item.fields.id} book={item.fields}/>
+                            <Book isLoading={!this.state.isLoading} key={item.fields.id} book={item}/>
                         )}
                     </>
                 }

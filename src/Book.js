@@ -1,7 +1,8 @@
 import React from 'react'
 import Modal  from './Modal'
 import FetchAutourList from './FetchAutourList'
-import styled from 'styled-components';
+import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 
 class Book extends React.Component{
@@ -10,11 +11,12 @@ class Book extends React.Component{
         return subscribers > 10 ? 'Очень популярна' : 'Набирает популярность'
     }
     render(){
-        const {title, subscribers, description, pages, languages, progress, imgLink, minPrice, price} = this.props.book
+        const {id, title, subscribers, description, pages, languages, progress, imgLink, minPrice, price} = this.props.book.fields
+        console.log(this.props)
         return (
                 <OneBook>
-                    <Image src={imgLink} alt={title}/>
-                    <BookTitle>{title}</BookTitle>
+                    <Link to={`/product/${this.props.book.id}`}><Image src={imgLink} alt={title}/>
+                    <BookTitle>{title}</BookTitle></Link>
                     <p>{description}</p>
                     <InfoBook>
                         <span>страниц - {pages}</span>

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import UserContext from './UserContext'
 import SimilarBooks from './SimilarBooks.json'
-console.log(SimilarBooks)
 
 const userInfo = {
     email: 'test@mail.ru',
@@ -14,7 +13,7 @@ const userInfo = {
 
 ReactDOM.render(
     <UserContext.Provider value={userInfo}>
-        <App  similar={SimilarBooks}/>
+        <App />
     </UserContext.Provider>
     ,
     document.getElementById('root')
