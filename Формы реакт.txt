@@ -1,0 +1,21 @@
+1. Установить npm install --save react-hook-form
+2. Подключить import {useForm} from 'react-hook-form'
+
+3. Валидация 
+Установить yap (npm install --save yup и npm install --save @hookform/resolvers)
+
+Импортировать в файл 
+import {yupResolver} from '@hookform/resolvers'
+import * as yup from 'yup'
+Создать схему для проверкиЖ
+ const Schema = yup.object().shape({
+    title: yup.string().required(),
+    price: yup.number().positive().min(10).max(100000).required(),
+    imgLink: yup.string().required(),
+    description: yup.string().required()
+})
+Там где вызывается хук useForm добавить useFrom({resolver: yupResolver(schema)})
+
+4. Плагин для использования async and await (npm install --save @babel/plugin-transform-runtime )
+добавить в babelrc
+"plugins": ["@babel/plugin-transform-runtime"]

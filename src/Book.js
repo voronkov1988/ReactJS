@@ -12,7 +12,6 @@ class Book extends React.Component{
     }
     render(){
         const {id, title, subscribers, description, pages, languages, progress, imgLink, minPrice, price} = this.props.book.fields
-        console.log(this.props)
         return (
                 <OneBook>
                     <Link to={`/product/${this.props.book.id}`}><Image src={imgLink} alt={title}/>
@@ -37,12 +36,12 @@ class Book extends React.Component{
 export default Book
 
 const OneBook = styled.div`
-    max-width: 35%;
+    width: 90%;
     border: 2px solid black;
     margin: 10px 10px;
     box-shadow: 3px 3px gray;
     @media(max-width: 800px){
-        max-width:100%;
+        width:100%;
     }
 `;
 const Image = styled.img`
